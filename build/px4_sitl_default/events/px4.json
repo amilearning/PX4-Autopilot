@@ -1,0 +1,224 @@
+{
+  "version": 1,
+  "components": {
+    "1": {
+      "namespace": "px4",
+      "event_groups": {
+        "default": {
+          "events": {
+            "10398259": {
+              "name": "mission_execute_rev",
+              "message": "Executing Reverse Mission"
+            },
+            "15598001": {
+              "name": "mission_execute",
+              "message": "Executing Mission"
+            },
+            "2806966": {
+              "name": "mission_finished_rev",
+              "message": "Reverse Mission finished, landed"
+            },
+            "7803396": {
+              "name": "mission_finished",
+              "message": "Mission finished, landed"
+            },
+            "1064976": {
+              "name": "mission_finished_rev_loiter",
+              "message": "Reverse Mission finished, loitering"
+            },
+            "4678390": {
+              "name": "mission_finished_loiter",
+              "message": "Mission finished, loitering"
+            },
+            "4854315": {
+              "name": "mission_not_valid_refuse",
+              "message": "No valid mission available, refusing takeoff"
+            },
+            "3390156": {
+              "name": "mission_not_valid_loiter",
+              "message": "No valid mission available, loitering"
+            },
+            "15151454": {
+              "name": "mission_takeoff_to",
+              "message": "Takeoff to {1:.1m_v} above home",
+              "arguments": [
+                {
+                  "type": "float",
+                  "name": "arg0"
+                }
+              ]
+            },
+            "16773080": {
+              "name": "mission_ignore_non_position_item",
+              "message": "MissionReverse: Got a non-position mission item, ignoring it"
+            },
+            "11985219": {
+              "name": "mission_holding_above_landing",
+              "message": "Holding at {1:.0m_v} above landing",
+              "arguments": [
+                {
+                  "type": "float",
+                  "name": "arg0"
+                }
+              ]
+            },
+            "1962848": {
+              "name": "mission_index_out_of_bound",
+              "message": "Mission item index out of bound, index: {1}, max: {2}",
+              "arguments": [
+                {
+                  "type": "uint16_t",
+                  "name": "arg0"
+                },
+                {
+                  "type": "uint16_t",
+                  "name": "arg1"
+                }
+              ]
+            },
+            "11724756": {
+              "name": "mission_failed_to_read_wp",
+              "message": "Waypoint {1} could not be read from storage",
+              "arguments": [
+                {
+                  "type": "uint16_t",
+                  "name": "arg0"
+                }
+              ]
+            },
+            "6922012": {
+              "name": "mission_failed_to_write_do_jump",
+              "message": "DO JUMP waypoint could not be written"
+            },
+            "9316102": {
+              "name": "mission_do_jump_rep_completed",
+              "message": "DO JUMP repetitions completed"
+            },
+            "4488117": {
+              "name": "mission_do_jump_cycle",
+              "message": "DO JUMP is cycling, giving up"
+            },
+            "3817890": {
+              "name": "mission_invalid_mission_state",
+              "message": "Invalid mission state",
+              "description": "No mission or storage failure"
+            },
+            "8163167": {
+              "name": "mission_cannot_read_mission",
+              "message": "Could not read mission"
+            },
+            "9351472": {
+              "name": "rtl_unsupported_mav_frame",
+              "message": "RTL: unsupported MAV_FRAME ({1})",
+              "arguments": [
+                {
+                  "type": "uint8_t",
+                  "name": "arg0"
+                }
+              ]
+            },
+            "11157417": {
+              "name": "rtl_land_at_home",
+              "message": "RTL: landing at home position"
+            },
+            "14005080": {
+              "name": "rtl_land_at_mission",
+              "message": "RTL: landing at mission landing"
+            },
+            "15432474": {
+              "name": "rtl_land_at_safe_point",
+              "message": "RTL: landing at safe landing point"
+            },
+            "4513795": {
+              "name": "rtl_using_mission_landing",
+              "message": "RTL: using mission landing"
+            },
+            "10406957": {
+              "name": "rtl_not_using_mission_landing",
+              "message": "RTL: unable to use mission landing, doing regular RTL"
+            },
+            "9210889": {
+              "name": "rtl_climb_to",
+              "message": "RTL: climb to {1m_v} ({2m_v} above destination)",
+              "arguments": [
+                {
+                  "type": "int32_t",
+                  "name": "arg0"
+                },
+                {
+                  "type": "int32_t",
+                  "name": "arg1"
+                }
+              ]
+            },
+            "16133968": {
+              "name": "rtl_return_at",
+              "message": "RTL: return at {1m_v} ({2m_v} above destination)",
+              "arguments": [
+                {
+                  "type": "int32_t",
+                  "name": "arg0"
+                },
+                {
+                  "type": "int32_t",
+                  "name": "arg1"
+                }
+              ]
+            },
+            "12128736": {
+              "name": "rtl_descend_to",
+              "message": "RTL: descend to {1m_v} ({2m_v} above destination)",
+              "arguments": [
+                {
+                  "type": "int32_t",
+                  "name": "arg0"
+                },
+                {
+                  "type": "int32_t",
+                  "name": "arg1"
+                }
+              ]
+            },
+            "11851609": {
+              "name": "rtl_loiter",
+              "message": "RTL: loiter {1:.1}s",
+              "arguments": [
+                {
+                  "type": "float",
+                  "name": "arg0"
+                }
+              ]
+            },
+            "16725343": {
+              "name": "rtl_completed_loiter",
+              "message": "RTL: completed, loitering"
+            },
+            "185258": {
+              "name": "rtl_land_at_destination",
+              "message": "RTL: land at destination"
+            },
+            "12894058": {
+              "name": "sensor_failover",
+              "message": "{1} sensor #{2} failure: {3}",
+              "description": "Land immediately and check the system.",
+              "arguments": [
+                {
+                  "type": "px4::sensor_type_t",
+                  "name": "arg0"
+                },
+                {
+                  "type": "uint8_t",
+                  "name": "arg1"
+                },
+                {
+                  "type": "px4::sensor_failover_reason_t",
+                  "name": "arg2"
+                }
+              ]
+            }
+          }
+        }
+      }
+    }
+  }
+}

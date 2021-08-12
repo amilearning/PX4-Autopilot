@@ -1,0 +1,652 @@
+{
+  "version": 1,
+  "components": {
+    "1": {
+      "namespace": "px4",
+      "event_groups": {
+        "default": {
+          "events": {
+            "10398259": {
+              "name": "mission_execute_rev",
+              "message": "Executing Reverse Mission"
+            },
+            "15598001": {
+              "name": "mission_execute",
+              "message": "Executing Mission"
+            },
+            "2806966": {
+              "name": "mission_finished_rev",
+              "message": "Reverse Mission finished, landed"
+            },
+            "7803396": {
+              "name": "mission_finished",
+              "message": "Mission finished, landed"
+            },
+            "1064976": {
+              "name": "mission_finished_rev_loiter",
+              "message": "Reverse Mission finished, loitering"
+            },
+            "4678390": {
+              "name": "mission_finished_loiter",
+              "message": "Mission finished, loitering"
+            },
+            "4854315": {
+              "name": "mission_not_valid_refuse",
+              "message": "No valid mission available, refusing takeoff"
+            },
+            "3390156": {
+              "name": "mission_not_valid_loiter",
+              "message": "No valid mission available, loitering"
+            },
+            "15151454": {
+              "name": "mission_takeoff_to",
+              "message": "Takeoff to {1:.1m_v} above home",
+              "arguments": [
+                {
+                  "type": "float",
+                  "name": "arg0"
+                }
+              ]
+            },
+            "16773080": {
+              "name": "mission_ignore_non_position_item",
+              "message": "MissionReverse: Got a non-position mission item, ignoring it"
+            },
+            "11985219": {
+              "name": "mission_holding_above_landing",
+              "message": "Holding at {1:.0m_v} above landing",
+              "arguments": [
+                {
+                  "type": "float",
+                  "name": "arg0"
+                }
+              ]
+            },
+            "1962848": {
+              "name": "mission_index_out_of_bound",
+              "message": "Mission item index out of bound, index: {1}, max: {2}",
+              "arguments": [
+                {
+                  "type": "uint16_t",
+                  "name": "arg0"
+                },
+                {
+                  "type": "uint16_t",
+                  "name": "arg1"
+                }
+              ]
+            },
+            "11724756": {
+              "name": "mission_failed_to_read_wp",
+              "message": "Waypoint {1} could not be read from storage",
+              "arguments": [
+                {
+                  "type": "uint16_t",
+                  "name": "arg0"
+                }
+              ]
+            },
+            "6922012": {
+              "name": "mission_failed_to_write_do_jump",
+              "message": "DO JUMP waypoint could not be written"
+            },
+            "9316102": {
+              "name": "mission_do_jump_rep_completed",
+              "message": "DO JUMP repetitions completed"
+            },
+            "4488117": {
+              "name": "mission_do_jump_cycle",
+              "message": "DO JUMP is cycling, giving up"
+            },
+            "3817890": {
+              "name": "mission_invalid_mission_state",
+              "message": "Invalid mission state",
+              "description": "No mission or storage failure"
+            },
+            "8163167": {
+              "name": "mission_cannot_read_mission",
+              "message": "Could not read mission"
+            },
+            "9351472": {
+              "name": "rtl_unsupported_mav_frame",
+              "message": "RTL: unsupported MAV_FRAME ({1})",
+              "arguments": [
+                {
+                  "type": "uint8_t",
+                  "name": "arg0"
+                }
+              ]
+            },
+            "11157417": {
+              "name": "rtl_land_at_home",
+              "message": "RTL: landing at home position"
+            },
+            "14005080": {
+              "name": "rtl_land_at_mission",
+              "message": "RTL: landing at mission landing"
+            },
+            "15432474": {
+              "name": "rtl_land_at_safe_point",
+              "message": "RTL: landing at safe landing point"
+            },
+            "4513795": {
+              "name": "rtl_using_mission_landing",
+              "message": "RTL: using mission landing"
+            },
+            "10406957": {
+              "name": "rtl_not_using_mission_landing",
+              "message": "RTL: unable to use mission landing, doing regular RTL"
+            },
+            "9210889": {
+              "name": "rtl_climb_to",
+              "message": "RTL: climb to {1m_v} ({2m_v} above destination)",
+              "arguments": [
+                {
+                  "type": "int32_t",
+                  "name": "arg0"
+                },
+                {
+                  "type": "int32_t",
+                  "name": "arg1"
+                }
+              ]
+            },
+            "16133968": {
+              "name": "rtl_return_at",
+              "message": "RTL: return at {1m_v} ({2m_v} above destination)",
+              "arguments": [
+                {
+                  "type": "int32_t",
+                  "name": "arg0"
+                },
+                {
+                  "type": "int32_t",
+                  "name": "arg1"
+                }
+              ]
+            },
+            "12128736": {
+              "name": "rtl_descend_to",
+              "message": "RTL: descend to {1m_v} ({2m_v} above destination)",
+              "arguments": [
+                {
+                  "type": "int32_t",
+                  "name": "arg0"
+                },
+                {
+                  "type": "int32_t",
+                  "name": "arg1"
+                }
+              ]
+            },
+            "11851609": {
+              "name": "rtl_loiter",
+              "message": "RTL: loiter {1:.1}s",
+              "arguments": [
+                {
+                  "type": "float",
+                  "name": "arg0"
+                }
+              ]
+            },
+            "16725343": {
+              "name": "rtl_completed_loiter",
+              "message": "RTL: completed, loitering"
+            },
+            "185258": {
+              "name": "rtl_land_at_destination",
+              "message": "RTL: land at destination"
+            },
+            "12894058": {
+              "name": "sensor_failover",
+              "message": "{1} sensor #{2} failure: {3}",
+              "description": "Land immediately and check the system.",
+              "arguments": [
+                {
+                  "type": "px4::sensor_type_t",
+                  "name": "arg0"
+                },
+                {
+                  "type": "uint8_t",
+                  "name": "arg1"
+                },
+                {
+                  "type": "px4::sensor_failover_reason_t",
+                  "name": "arg2"
+                }
+              ]
+            }
+          }
+        }
+      },
+      "enums": {
+        "sensor_type_t": {
+          "type": "uint8_t",
+          "description": "Sensor type for failover reporting",
+          "entries": {
+            "0": {
+              "name": "accel",
+              "description": "Accelerometer"
+            },
+            "1": {
+              "name": "gyro",
+              "description": "Gyroscope"
+            },
+            "2": {
+              "name": "mag",
+              "description": "Magnetometer"
+            }
+          }
+        },
+        "sensor_failover_reason_t": {
+          "type": "uint16_t",
+          "description": "Bitfield for sensor failover reason",
+          "is_bitfield": true,
+          "entries": {
+            "1": {
+              "name": "no_data",
+              "description": "No data"
+            },
+            "2": {
+              "name": "stale_data",
+              "description": "Stale data"
+            },
+            "4": {
+              "name": "timeout",
+              "description": "Timeout"
+            },
+            "8": {
+              "name": "high_error_count",
+              "description": "High Error Count"
+            },
+            "16": {
+              "name": "high_error_density",
+              "description": "High Error Density"
+            }
+          }
+        }
+      }
+    },
+    "0": {
+      "namespace": "common",
+      "enums": {
+        "health_component_t": {
+          "type": "uint64_t",
+          "description": "Bitfield for subsystems & components",
+          "is_bitfield": true,
+          "entries": {
+            "1": {
+              "name": "sensor_imu",
+              "description": "IMU"
+            },
+            "2": {
+              "name": "sensor_absolute_pressure",
+              "description": "Absolute pressure"
+            },
+            "4": {
+              "name": "sensor_differential_pressure",
+              "description": "Differential pressure"
+            },
+            "8": {
+              "name": "sensor_gps",
+              "description": "GPS"
+            },
+            "16": {
+              "name": "sensor_optical_flow",
+              "description": "Optical flow"
+            },
+            "32": {
+              "name": "sensor_vision_position",
+              "description": "Vision position estimate"
+            },
+            "64": {
+              "name": "sensor_distance",
+              "description": "Distance sensor"
+            },
+            "128": {
+              "name": "manual_control_input",
+              "description": "RC or virtual joystick input"
+            },
+            "256": {
+              "name": "motors_escs",
+              "description": "Motors/ESCs"
+            },
+            "512": {
+              "name": "utm",
+              "description": "UTM"
+            },
+            "1024": {
+              "name": "logging",
+              "description": "Logging"
+            },
+            "2048": {
+              "name": "battery",
+              "description": "Battery"
+            },
+            "4096": {
+              "name": "communication_links",
+              "description": "Communication links"
+            },
+            "8192": {
+              "name": "rate_controller",
+              "description": "Rate controller"
+            },
+            "16384": {
+              "name": "attitude_controller",
+              "description": "Attitude controller"
+            },
+            "32768": {
+              "name": "position_controller",
+              "description": "Position controller"
+            },
+            "65536": {
+              "name": "attitude_estimate",
+              "description": "Attitude estimate"
+            },
+            "131072": {
+              "name": "local_position_estimate",
+              "description": "Local position estimate"
+            },
+            "262144": {
+              "name": "mission",
+              "description": "Mission"
+            },
+            "524288": {
+              "name": "avoidance",
+              "description": "Avoidance"
+            },
+            "1048576": {
+              "name": "system",
+              "description": "System",
+              "comment": "e.g. CPU or RAM"
+            },
+            "2097152": {
+              "name": "camera",
+              "description": "Camera"
+            },
+            "4194304": {
+              "name": "gimbal",
+              "description": "Gimbal"
+            },
+            "8388608": {
+              "name": "payload",
+              "description": "Payload"
+            },
+            "16777216": {
+              "name": "global_position_estimate",
+              "description": "Global position estimate"
+            },
+            "33554432": {
+              "name": "storage",
+              "description": "Storage",
+              "comment": "e.g. SD card or FRAM"
+            }
+          }
+        },
+        "navigation_mode_category_t": {
+          "type": "uint8_t",
+          "description": "Navigation/flight mode category bits",
+          "is_bitfield": true,
+          "entries": {
+            "1": {
+              "name": "current",
+              "description": "Current mode"
+            },
+            "2": {
+              "name": "manual__unused",
+              "description": "Fully manual modes (w/o any controller support) (enable once needed)"
+            },
+            "4": {
+              "name": "rate__unused",
+              "description": "Rate-controlled modes (enable once needed)"
+            },
+            "8": {
+              "name": "attitude__unused",
+              "description": "Attitude-controlled modes (enable once needed)"
+            },
+            "16": {
+              "name": "altitude",
+              "description": "Altitude-controlled modes"
+            },
+            "32": {
+              "name": "position",
+              "description": "Position-controlled modes"
+            },
+            "64": {
+              "name": "autonomous",
+              "description": "Autonomous navigation modes"
+            },
+            "128": {
+              "name": "mission",
+              "description": "(Planned) Mission modes"
+            }
+          }
+        },
+        "calibration_type_t": {
+          "type": "uint16_t",
+          "description": "Calibration type",
+          "is_bitfield": true,
+          "entries": {
+            "1": {
+              "name": "accel",
+              "description": "Accelerometer"
+            },
+            "2": {
+              "name": "mag",
+              "description": "Magnetometer"
+            },
+            "4": {
+              "name": "gyro",
+              "description": "Gyroscope"
+            },
+            "8": {
+              "name": "level",
+              "description": "Level"
+            },
+            "16": {
+              "name": "airspeed",
+              "description": "Airspeed"
+            },
+            "32": {
+              "name": "rc",
+              "description": "RC"
+            }
+          }
+        },
+        "calibration_sides_t": {
+          "type": "uint8_t",
+          "description": "Calibration Sides Bitfield",
+          "is_bitfield": true,
+          "entries": {
+            "1": {
+              "name": "tail_down",
+              "description": "Tail Down"
+            },
+            "2": {
+              "name": "nose_down",
+              "description": "Nose Down"
+            },
+            "4": {
+              "name": "left_side_down",
+              "description": "Left Side Down"
+            },
+            "8": {
+              "name": "right_side_down",
+              "description": "Right Side Down"
+            },
+            "16": {
+              "name": "upside_down",
+              "description": "Upside Down"
+            },
+            "32": {
+              "name": "down",
+              "description": "Down"
+            }
+          }
+        },
+        "calibration_action_t": {
+          "type": "uint8_t",
+          "description": "Calibration Action/next step",
+          "entries": {
+            "0": {
+              "name": "already_completed",
+              "description": "Side already completed, switch to one of the remaining sides"
+            },
+            "1": {
+              "name": "next_orientation",
+              "description": "Switch to next orientation"
+            },
+            "2": {
+              "name": "rotate",
+              "description": "Rotate as shown"
+            },
+            "3": {
+              "name": "hold_still",
+              "description": "Hold still"
+            }
+          }
+        },
+        "calibration_result_t": {
+          "type": "uint8_t",
+          "description": "Calibration Result",
+          "entries": {
+            "0": {
+              "name": "success",
+              "description": "Success"
+            },
+            "1": {
+              "name": "failed",
+              "description": "Failed"
+            },
+            "2": {
+              "name": "aborted",
+              "description": "Aborted"
+            }
+          }
+        }
+      },
+      "event_groups": {
+        "default": {
+          "events": {}
+        },
+        "health": {
+          "events": {
+            "1000": {
+              "name": "health_summary",
+              "message": "Health report summary event",
+              "arguments": [
+                {
+                  "type": "health_component_t",
+                  "name": "is_present",
+                  "description": "Bitset for each component if present or not"
+                },
+                {
+                  "type": "health_component_t",
+                  "name": "error",
+                  "description": "Bitset for each component if there is a failure or fatal error"
+                },
+                {
+                  "type": "health_component_t",
+                  "name": "warning",
+                  "description": "Bitset for each component if there are warnings"
+                }
+              ]
+            }
+          }
+        },
+        "arming_check": {
+          "events": {
+            "1010": {
+              "name": "arming_check_summary",
+              "message": "Arming check summary event",
+              "arguments": [
+                {
+                  "type": "health_component_t",
+                  "name": "error",
+                  "description": "Bitset for each component if there is an error (over all navigation mode categories)"
+                },
+                {
+                  "type": "health_component_t",
+                  "name": "warning",
+                  "description": "Bitset for each component if there is a warning (over all navigation mode categories)"
+                },
+                {
+                  "type": "navigation_mode_category_t",
+                  "name": "can_arm",
+                  "description": "Bitset for each navigation modes if arming is allowed."
+                }
+              ]
+            }
+          }
+        },
+        "calibration": {
+          "events": {
+            "1100": {
+              "name": "cal_progress",
+              "message": "Calibration progress: {2}%",
+              "arguments": [
+                {
+                  "type": "uint8_t",
+                  "name": "proto_ver",
+                  "description": "Protocol version (set to 1)"
+                },
+                {
+                  "type": "int8_t",
+                  "name": "progress",
+                  "description": "Current progress in %"
+                },
+                {
+                  "type": "calibration_type_t",
+                  "name": "calibration_type"
+                },
+                {
+                  "type": "calibration_sides_t",
+                  "name": "required_sides",
+                  "description": "Sides still left to be done"
+                }
+              ]
+            },
+            "1101": {
+              "name": "cal_orientation_detected",
+              "message": "Orientation detected: {1}",
+              "arguments": [
+                {
+                  "type": "calibration_sides_t",
+                  "name": "orientation"
+                },
+                {
+                  "type": "calibration_action_t",
+                  "name": "action"
+                }
+              ]
+            },
+            "1102": {
+              "name": "cal_orientation_done",
+              "message": "Orientation Complete: {1}, next step: {2}",
+              "arguments": [
+                {
+                  "type": "calibration_sides_t",
+                  "name": "orientation"
+                },
+                {
+                  "type": "calibration_action_t",
+                  "name": "action"
+                }
+              ]
+            },
+            "1103": {
+              "name": "cal_done",
+              "message": "Calibration Complete: {1}",
+              "arguments": [
+                {
+                  "type": "calibration_result_t",
+                  "name": "result"
+                }
+              ]
+            }
+          }
+        }
+      }
+    }
+  }
+}
