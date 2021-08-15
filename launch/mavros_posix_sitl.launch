@@ -12,8 +12,9 @@
     <!-- vehicle model and world -->
     <arg name="est" default="ekf2"/>
     <arg name="vehicle" default="iris"/>
-    <!-- <arg name="world" default="$(find mavlink_sitl_gazebo)/worlds/empty.world"/> -->
-    <arg name="world" default="$(find mavlink_sitl_gazebo)/worlds/explore1.world"/>
+
+    <!-- <arg name="world" default="$(find mavlink_sitl_gazebo)/worlds/explore1.world"/>  -->
+    <arg name="world" default="$(find mavlink_sitl_gazebo)/worlds/explore_hmclv1.world"/>
     <arg name="sdf" default="$(find mavlink_sitl_gazebo)/models/iris_depth_camera/iris_depth_camera.sdf"/>
 
    <node pkg="tf" type="static_transform_publisher" name="world_map_broadcaster" args="0.0 0 0.0 0 0 0 world map 100"/>

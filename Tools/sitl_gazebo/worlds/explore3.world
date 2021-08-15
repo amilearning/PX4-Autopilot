@@ -23,11 +23,11 @@
               <trajectory id="0" type="walking">
                 <waypoint>
                   <time>0</time>
-                  <pose>-0.7 7.23 0.0 0 0 0</pose>
+                  <pose>3.67 8.5 0.0 0 0 0</pose>
                 </waypoint>
                 <waypoint>
                   <time>1</time>
-                  <pose>-0.7 7.24 0.0 0 0 0</pose>
+                  <pose>3.65 8.6 0.0 0 0 0</pose>
                 </waypoint>
               </trajectory>
             </script>
@@ -43,11 +43,11 @@
               <trajectory id="0" type="walking">
                 <waypoint>
                   <time>0</time>
-                  <pose>10.3 2.51 0.0 0 0 0</pose>
+                  <pose>6.0 11.8 0.0 0 0 0</pose>
                 </waypoint>
                 <waypoint>
                   <time>1</time>
-                  <pose>10.3 2.52 0.0 0 0 0</pose>
+                  <pose>6.0 11.9 0.0 0 0 0</pose>
                 </waypoint>
               </trajectory>
             </script>
@@ -63,11 +63,11 @@
               <trajectory id="0" type="walking">
                 <waypoint>
                   <time>0</time>
-                  <pose>8.5 7.5 0.0 0 0 0</pose>
+                  <pose>14.7 10.3 0.0 0 0 0</pose>
                 </waypoint>
                 <waypoint>
                   <time>1</time>
-                  <pose>8.5 7.6 0.0 0 0 0</pose>
+                  <pose>14.65 10.4 0.0 0 0 0</pose>
                 </waypoint>
               </trajectory>
             </script>
@@ -83,11 +83,30 @@
               <trajectory id="0" type="walking">
                 <waypoint>
                   <time>0</time>
-                  <pose>20.53 7.3 0.0 0 0 0</pose>
+                  <pose>22 1.5 0.0 0 0 0</pose>
                 </waypoint>
                 <waypoint>
                   <time>1</time>
-                  <pose>20.53 7.4 0.0 0 0 0</pose>
+                  <pose>22.1 1.6 0.0 0 0 0</pose>
+                </waypoint>
+              </trajectory>
+            </script>
+        </actor>
+
+        <actor name="actor_5">
+          <skin>
+            <filename>walk.dae</filename>
+            <scale>1.0</scale>
+          </skin>
+            <script>
+              <trajectory id="0" type="walking">
+                <waypoint>
+                  <time>0</time>
+                  <pose>9.6 0.0 0.0 0 0 0</pose>
+                </waypoint>
+                <waypoint>
+                  <time>1</time>
+                  <pose>9.65 0.1 0.0 0 0 0</pose>
                 </waypoint>
               </trajectory>
             </script>
